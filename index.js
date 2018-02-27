@@ -5,6 +5,37 @@ var faker = require('faker')
 module.exports = () => {
   const ROLES = ['Super Admin', 'Agency Admin', 'Agency User']
   const AGENCIES = ['Starcom', 'Spark Foundry', 'Zenith', 'Blue 449']
+  const RESOURCES = [
+    {name:"advertisers", permission: {"create":true,"read":true,"update":true,"destroy":true}},
+    {name:"audience_hierarchies", permission: {"create":true,"read":true,"update":true,"destroy":true}},
+    {name:"brands", permission: {"create":true,"read":true,"update":true,"destroy":true}},
+    {name:"briefs", permission: {"create":true,"read":true,"update":true,"destroy":true}},
+    {name:"campaign_images", permission: {"create":true,"read":true,"update":true,"destroy":true}},
+    {name:"channels", permission: {"create":true,"read":true,"update":true,"destroy":true}},
+    {name:"clients", permission: {"create":true,"read":true,"update":true,"destroy":true}},
+    {name:"countries", permission: {"create":true,"read":true,"update":true,"destroy":true}},
+    {name:"currency", permission: {"create":true,"read":true,"update":true,"destroy":true}},
+    {name:"curves", permission: {"create":true,"read":true,"update":true,"destroy":true}},
+    {name:"custom_segments", permission: {"create":true,"read":true,"update":true,"destroy":true}},
+    {name:"customer_journeys", permission: {"create":true,"read":true,"update":true,"destroy":true}},
+    {name:"demographics", permission: {"create":true,"read":true,"update":true,"destroy":true}},
+    {name:"dmp_partners", permission: {"create":true,"read":true,"update":true,"destroy":true}},
+    {name:"dsp_accounts", permission: {"create":true,"read":true,"update":true,"destroy":true}},
+    {name:"dsps", permission: {"create":true,"read":true,"update":true,"destroy":true}},
+    {name:"languages", permission: {"create":true,"read":true,"update":true,"destroy":true}},
+    {name:"left_hand_nav", permission: {"create":true,"read":true,"update":true,"destroy":true}},
+    {name:"login", permission: {"create":true,"read":true,"update":true,"destroy":true}},
+    {name:"market_segments", permission: {"create":true,"read":true,"update":true,"destroy":true}},
+    {name:"outcome_timeframes", permission: {"create":true,"read":true,"update":true,"destroy":true}},
+    {name:"performance_goals", permission: {"create":true,"read":true,"update":true,"destroy":true}},
+    {name:"performances", permission: {"create":true,"read":true,"update":true,"destroy":true}},
+    {name:"plans", permission: {"create":true,"read":true,"update":true,"destroy":true}},
+    {name:"products", permission: {"create":true,"read":true,"update":true,"destroy":true}},
+    {name:"regions", permission: {"create":true,"read":true,"update":true,"destroy":true}},
+    {name:"segment_search", permission: {"create":true,"read":true,"update":true,"destroy":true}},
+    {name:"tag_management", permission: {"create":true,"read":true,"update":true,"destroy":true}},
+    {name:"user_preferences", permission: {"create":true,"read":true,"update":true,"destroy":true}}
+  ]
 
   class User {
     constructor(id, firstname, lastname, email, role, lionlogin, agency) {
@@ -25,20 +56,17 @@ module.exports = () => {
     }
   }
 
-  class RoleResource {
-    constructor(name, read, create, update, del) {
-      const struct = {
-        id: 1,
-        text: 'ohhai'
-      }
-    }
+  function resourcesById() {
+    return RESOURCES.map((r, i, Arr) => {
+      return Object.assign(r, { id: i + 1 })
+    });
   }
 
   const data = {
     roles: ROLES,
     agencies: AGENCIES,
     users: [],
-    resources: [{id: 1, text: 'ohhai'}]
+    resources: resourcesById()
   }
 
   for (let i = 1; i < 100; i++) {
@@ -48,34 +76,3 @@ module.exports = () => {
 
   return data
 }
-
-
-// "advertisers":{"create":true,"read":true,"update":true,"destroy":true},
-// "audience_hierarchies":{"create":true,"read":true,"update":true,"destroy":true},
-// "brands":{"create":true,"read":true,"update":true,"destroy":true},
-// "briefs":{"create":true,"read":true,"update":true,"destroy":true},
-// "campaign_images":{"create":true,"read":true,"update":true,"destroy":true},
-// "channels":{"create":true,"read":true,"update":true,"destroy":true},
-// "clients":{"create":true,"read":true,"update":true,"destroy":true},
-// "countries":{"create":true,"read":true,"update":true,"destroy":true},
-// "currency":{"create":true,"read":true,"update":true,"destroy":true},
-// "curves":{"create":true,"read":true,"update":true,"destroy":true},
-// "custom_segments":{"create":true,"read":true,"update":true,"destroy":true},
-// "customer_journeys":{"create":true,"read":true,"update":true,"destroy":true},
-// "demographics":{"create":true,"read":true,"update":true,"destroy":true},
-// "dmp_partners":{"create":true,"read":true,"update":true,"destroy":true},
-// "dsp_accounts":{"create":true,"read":true,"update":true,"destroy":true},
-// "dsps":{"create":true,"read":true,"update":true,"destroy":true},
-// "languages":{"create":true,"read":true,"update":true,"destroy":true},
-// "left_hand_nav":{"create":true,"read":true,"update":true,"destroy":true},
-// "login":{"create":true,"read":true,"update":true,"destroy":true},
-// "market_segments":{"create":true,"read":true,"update":true,"destroy":true},
-// "outcome_timeframes":{"create":true,"read":true,"update":true,"destroy":true},
-// "performance_goals":{"create":true,"read":true,"update":true,"destroy":true},
-// "performances":{"create":true,"read":true,"update":true,"destroy":true},
-// "plans":{"create":true,"read":true,"update":true,"destroy":true},
-// "products":{"create":true,"read":true,"update":true,"destroy":true},
-// "regions":{"create":true,"read":true,"update":true,"destroy":true},
-// "segment_search":{"create":true,"read":true,"update":true,"destroy":true},
-// "tag_management":{"create":true,"read":true,"update":true,"destroy":true},
-// "user_preferences":{"create":true,"read":true,"update":true,"destroy":true}
