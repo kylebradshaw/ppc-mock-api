@@ -1,4 +1,7 @@
 {
   "/auth/users": "/users",
-  "/auth/users/:id": "/users/:id"
+  "/auth/users/:id": "/users/:id",
+  "/auth/roles/": "/roles",
+  "/auth/roles/:id": "/roles/:id",
+  "/auth/roles/:id/resources": "/resources"
 }
