@@ -4,12 +4,13 @@
   "description": "for mocking",
   "main": "index.js",
   "scripts": {
-    "mock": "json-server -w index.js -p 4001",
+    "mock": "json-server -w index.js -p 4001 -r routes.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "faker": "^4.1.0",
     "sha1": "^1.1.1"
   }
 }
