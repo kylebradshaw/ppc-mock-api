@@ -1,40 +1,41 @@
 // index.js
 const sha1 = require('sha1')
-var faker = require('faker')
+const faker = require('faker')
+let coinflip = require('coinflip')
 
 module.exports = () => {
   const ROLES = ['Super Admin', 'Agency Admin', 'Agency User']
   const AGENCIES = ['Starcom', 'Spark Foundry', 'Zenith', 'Blue 449']
   const RESOURCES = [
-    {name:"advertisers", permission: {"create":true,"read":true,"update":true,"destroy":true}},
-    {name:"audience_hierarchies", permission: {"create":true,"read":true,"update":true,"destroy":true}},
-    {name:"brands", permission: {"create":true,"read":true,"update":true,"destroy":true}},
-    {name:"briefs", permission: {"create":true,"read":true,"update":true,"destroy":true}},
-    {name:"campaign_images", permission: {"create":true,"read":true,"update":true,"destroy":true}},
-    {name:"channels", permission: {"create":true,"read":true,"update":true,"destroy":true}},
-    {name:"clients", permission: {"create":true,"read":true,"update":true,"destroy":true}},
-    {name:"countries", permission: {"create":true,"read":true,"update":true,"destroy":true}},
-    {name:"currency", permission: {"create":true,"read":true,"update":true,"destroy":true}},
-    {name:"curves", permission: {"create":true,"read":true,"update":true,"destroy":true}},
-    {name:"custom_segments", permission: {"create":true,"read":true,"update":true,"destroy":true}},
-    {name:"customer_journeys", permission: {"create":true,"read":true,"update":true,"destroy":true}},
-    {name:"demographics", permission: {"create":true,"read":true,"update":true,"destroy":true}},
-    {name:"dmp_partners", permission: {"create":true,"read":true,"update":true,"destroy":true}},
-    {name:"dsp_accounts", permission: {"create":true,"read":true,"update":true,"destroy":true}},
-    {name:"dsps", permission: {"create":true,"read":true,"update":true,"destroy":true}},
-    {name:"languages", permission: {"create":true,"read":true,"update":true,"destroy":true}},
-    {name:"left_hand_nav", permission: {"create":true,"read":true,"update":true,"destroy":true}},
-    {name:"login", permission: {"create":true,"read":true,"update":true,"destroy":true}},
-    {name:"market_segments", permission: {"create":true,"read":true,"update":true,"destroy":true}},
-    {name:"outcome_timeframes", permission: {"create":true,"read":true,"update":true,"destroy":true}},
-    {name:"performance_goals", permission: {"create":true,"read":true,"update":true,"destroy":true}},
-    {name:"performances", permission: {"create":true,"read":true,"update":true,"destroy":true}},
-    {name:"plans", permission: {"create":true,"read":true,"update":true,"destroy":true}},
-    {name:"products", permission: {"create":true,"read":true,"update":true,"destroy":true}},
-    {name:"regions", permission: {"create":true,"read":true,"update":true,"destroy":true}},
-    {name:"segment_search", permission: {"create":true,"read":true,"update":true,"destroy":true}},
-    {name:"tag_management", permission: {"create":true,"read":true,"update":true,"destroy":true}},
-    {name:"user_preferences", permission: {"create":true,"read":true,"update":true,"destroy":true}}
+    {name:"advertisers", permission: {"create": coinflip(), "read": coinflip(), "update": coinflip(), "destroy": coinflip()} },
+    {name:"audience_hierarchies", permission: {"create": coinflip(), "read": coinflip(), "update": coinflip(), "destroy": coinflip()} },
+    {name:"brands", permission: {"create": coinflip(), "read": coinflip(), "update": coinflip(), "destroy": coinflip()} },
+    {name:"briefs", permission: {"create": coinflip(), "read": coinflip(), "update": coinflip(), "destroy": coinflip()} },
+    {name:"campaign_images", permission: {"create": coinflip(), "read": coinflip(), "update": coinflip(), "destroy": coinflip()} },
+    {name:"channels", permission: {"create": coinflip(), "read": coinflip(), "update": coinflip(), "destroy": coinflip()} },
+    {name:"clients", permission: {"create": coinflip(), "read": coinflip(), "update": coinflip(), "destroy": coinflip()} },
+    {name:"countries", permission: {"create": coinflip(), "read": coinflip(), "update": coinflip(), "destroy": coinflip()} },
+    {name:"currency", permission: {"create": coinflip(), "read": coinflip(), "update": coinflip(), "destroy": coinflip()} },
+    {name:"curves", permission: {"create": coinflip(), "read": coinflip(), "update": coinflip(), "destroy": coinflip()} },
+    {name:"custom_segments", permission: {"create": coinflip(), "read": coinflip(), "update": coinflip(), "destroy": coinflip()} },
+    {name:"customer_journeys", permission: {"create": coinflip(), "read": coinflip(), "update": coinflip(), "destroy": coinflip()} },
+    {name:"demographics", permission: {"create": coinflip(), "read": coinflip(), "update": coinflip(), "destroy": coinflip()} },
+    {name:"dmp_partners", permission: {"create": coinflip(), "read": coinflip(), "update": coinflip(), "destroy": coinflip()} },
+    {name:"dsp_accounts", permission: {"create": coinflip(), "read": coinflip(), "update": coinflip(), "destroy": coinflip()} },
+    {name:"dsps", permission: {"create": coinflip(), "read": coinflip(), "update": coinflip(), "destroy": coinflip()} },
+    {name:"languages", permission: {"create": coinflip(), "read": coinflip(), "update": coinflip(), "destroy": coinflip()} },
+    {name:"left_hand_nav", permission: {"create": coinflip(), "read": coinflip(), "update": coinflip(), "destroy": coinflip()} },
+    {name:"login", permission: {"create": coinflip(), "read": coinflip(), "update": coinflip(), "destroy": coinflip()} },
+    {name:"market_segments", permission: {"create": coinflip(), "read": coinflip(), "update": coinflip(), "destroy": coinflip()} },
+    {name:"outcome_timeframes", permission: {"create": coinflip(), "read": coinflip(), "update": coinflip(), "destroy": coinflip()} },
+    {name:"performance_goals", permission: {"create": coinflip(), "read": coinflip(), "update": coinflip(), "destroy": coinflip()} },
+    {name:"performances", permission: {"create": coinflip(), "read": coinflip(), "update": coinflip(), "destroy": coinflip()} },
+    {name:"plans", permission: {"create": coinflip(), "read": coinflip(), "update": coinflip(), "destroy": coinflip()} },
+    {name:"products", permission: {"create": coinflip(), "read": coinflip(), "update": coinflip(), "destroy": coinflip()} },
+    {name:"regions", permission: {"create": coinflip(), "read": coinflip(), "update": coinflip(), "destroy": coinflip()} },
+    {name:"segment_search", permission: {"create": coinflip(), "read": coinflip(), "update": coinflip(), "destroy": coinflip()} },
+    {name:"tag_management", permission: {"create": coinflip(), "read": coinflip(), "update": coinflip(), "destroy": coinflip()} },
+    {name:"user_preferences", permission: {"create": coinflip(), "read": coinflip(), "update": coinflip(), "destroy": coinflip()} }
   ]
 
   class User {

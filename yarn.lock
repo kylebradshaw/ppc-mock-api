@@ -6,6 +6,10 @@
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/charenc/-/charenc-0.0.2.tgz#c0a1d2f3a7092e03774bfa83f14c0fc5790a8667"
 
+coinflip@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/coinflip/-/coinflip-1.0.0.tgz#fc200b29dae7c41b0c2fb91050a21cecb1e19f8a"
+
 "crypt@>= 0.0.1":
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/crypt/-/crypt-0.0.2.tgz#88d7ff7ec0dfb86f713dc87bbb42d044d3e6c41b"
