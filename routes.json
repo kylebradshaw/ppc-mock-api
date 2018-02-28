@@ -1,8 +1,8 @@
 {
-  "/auth/users": "/users",
-  "/auth/users/:id": "/users/:id",
-  "/auth/roles/": "/roles",
-  "/auth/roles/:id": "/roles/:id",
-  "/auth/roles/:id/resources": "/resources",
-  "/auth/roles/:id/resources/:id": "/resources/:id"
+  "/authapi/users": "/users",
+  "/authapi/users/:id": "/users/:id",
+  "/authapi/roles/": "/roles",
+  "/authapi/roles/:id": "/roles/:id",
+  "/authapi/roles/:id/resources": "/resources",
+  "/authapi/roles/:id/resources/:id": "/resources/:id"
 }
