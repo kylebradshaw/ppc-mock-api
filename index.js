@@ -37,20 +37,28 @@ module.exports = () => {
     {name:"tag_management", permission: {"create": coinflip(), "read": coinflip(), "update": coinflip(), "destroy": coinflip()} },
     {name:"user_preferences", permission: {"create": coinflip(), "read": coinflip(), "update": coinflip(), "destroy": coinflip()} }
   ]
-
+  // export interface User {
+  //   product_ids: any;
+  //   email: string;
+  //   role_id: number;
+  //   first_name: string;
+  //   last_name: string;
+  //   id: number;
+  // }
   class User {
-    constructor(id, firstname, lastname, email, role, lionlogin, agency) {
+    constructor(id, firstname, lastname, email, roleid, productids) { //, lionlogin, agency
       const name = faker.name.findName()
       const first = name.split(' ')[0]
       const last = name.split(' ')[1]
       const struct = {
         id: id || null,
-        firstname: firstname || first,
-        lastname: lastname || last,
+        first_name: firstname || first,
+        last_name: lastname || last,
         email: email || `${first.toLowerCase()}.${last.toLowerCase()}@publicisgroupe.net`,
-        role: ROLES[Math.floor(Math.random() * ROLES.length)],
-        lionlogin: `${first.substring(0, 1).toLowerCase()}${last.substring(0, 7).toLowerCase()}`,
-        agency: AGENCIES[Math.floor(Math.random() * AGENCIES.length)]
+        role_id: Math.floor(Math.random() * ROLES.length),
+        // lionlogin: `${first.substring(0, 1).toLowerCase()}${last.substring(0, 7).toLowerCase()}`,
+        // agency: AGENCIES[Math.floor(Math.random() * AGENCIES.length)],
+        product_ids: productids || []
       }
 
       return struct
