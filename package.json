@@ -4,6 +4,7 @@
   "description": "for mocking",
   "main": "index.js",
   "scripts": {
+    "start": "npm run mock",
     "mock": "json-server -w index.js -p 4005 -r routes.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
