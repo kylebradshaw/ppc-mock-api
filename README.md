@@ -11,6 +11,7 @@ Endpoints are exposed <http://localhost:4005>
 
 *POST* `/users`
 
+```
 {
   "first_name": "Kyle",
   "last_name": "Bradshaw",
@@ -20,6 +21,7 @@ Endpoints are exposed <http://localhost:4005>
   "agency": "UrM0Mz",
   "product_ids": []
 }
+```
 
 ## RETRIVE USERS
 
@@ -29,6 +31,7 @@ Endpoints are exposed <http://localhost:4005>
 
 *PUT* `/users/:id`
 
+```
 {
   "first_name": "Kyle",
   "last_name": "Bradshaw",
@@ -38,12 +41,15 @@ Endpoints are exposed <http://localhost:4005>
   "agency": "UrD4Dz",
   "product_ids": []
 }
+```
 
 *PATCH* `/users/:id`
 
+```
 {
   "agency": "TehM0Mz",
 }
+```
 
 ## DELETE
 
